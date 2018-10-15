@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  api-gateway:
+    build: .
+    environment:
+      PORT: '5000'
+      SHOW_URLS: 'true'
+      STATISTICS_URL: '192.168.99.101'
+      STATISTICS_PORT: '8800'
+      STATISTICS_ENTRY: 'statistics'
+    ports:
+      - '5000:5000'
