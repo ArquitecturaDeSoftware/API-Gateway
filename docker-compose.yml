@@ -8,5 +8,8 @@ services:
       STATISTICS_URL: '192.168.99.101'
       STATISTICS_PORT: '8800'
       STATISTICS_ENTRY: 'statistics'
+      LUNCHROOM_URL: ''
+      LUNCHROOM_PORT: ''
+      LUNCHROOM_ENTRY: ''
     ports:
       - '5000:5000'

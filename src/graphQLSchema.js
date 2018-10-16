@@ -5,24 +5,24 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities';
 
 import {
-	statisticsMutations,
-	statisticsQueries,
-	statisticsTypeDef
-} from './statistics/typeDefs';
+	microservicesMutations,
+	microservicesQueries,
+	microservicesTypeDef
+} from './microservices/typeDefs';
 
-import statisticsResolvers from './statistics/resolvers';
+import microservicesResolvers from './microservices/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		statisticsTypeDef
+		microservicesTypeDef
 	],
 	[
-		statisticsQueries
+		microservicesQueries
 	],
 	[
-		statisticsMutations
+		microservicesMutations
 	]
 );
 
@@ -31,6 +31,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		statisticsResolvers
+		microservicesResolvers
 	)
 });
