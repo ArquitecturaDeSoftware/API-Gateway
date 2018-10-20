@@ -90,6 +90,26 @@ type Menus{
 }
 type MenuResponse_PUT{
     msg: String
+}
+
+
+
+input PostInput{
+    id: Int!
+    text: String!
+    author_name: String! 
+    author_email: String!
+    restaurant_id: String!
+    score: Int!
+}
+type Posts{
+    id: Int!
+    created_on: String!
+    text: String!
+    author_name: String!
+    author_email: String!
+    restaurant_id: String!
+    score: Int!
 }`;
 
 
@@ -102,19 +122,24 @@ export const microservicesQueries = `
 
     allMenus: [Menus]!
     menuByRestaurant(id_restaurant: String!): [Menus]! 
+
+    allPosts: [Posts]!
+    postByRestaurant(id_restaurant: String!): [Posts]!
 `;
 
 
 export const microservicesMutations = `
-    createStatistic(statistic: StatisticInput!): Statistic_POST!
-    deleteStatistic(id_statistic: String!): Statistic_DEL!
+    createStatistic(statistic: StatisticInput!): Statistic_POST
+    deleteStatistic(id_statistic: String!): Statistic_DEL
 
-    updateLunchroom(id_lunchroom: String!, lunchroom: LunchroomInput!): String
+    updateLunchroom(id_lunchroom: String!, lunchroom: LunchroomInput!): Lunchroom
     createLunchroom(lunchroom: LunchroomInput!): String
     deleteLunchroom(id_lunchroom: String!): String
 
-    updateMenu(id_menu: String!, menu: MenuInput_PUT!): MenuResponse_PUT!
+    updateMenu(id_menu: String!, menu: MenuInput_PUT!): MenuResponse_PUT
     createMenu(menu: MenuInput_POST!): String 
+
+    createPost(post: PostInput!): Posts
 `; 
 
 

@@ -14,5 +14,8 @@ services:
       MENU_URL: '35.190.158.114'
       MENU_PORT: '3000'
       MENU_ENTRY: 'api/menus'
+      POST_URL: '104.196.222.74'
+      POST_PORT: '8000'
+      POST_ENTRY: 'posts'
     ports:
       - '5000:5000'

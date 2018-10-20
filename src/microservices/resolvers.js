@@ -1,9 +1,10 @@
 import { generalRequest, getRequest } from '../utilities';
-import { url_S, port_S, entryPoint_S, url_L, port_L, entryPoint_L,  url_M, port_M, entryPoint_M} from './server';
+import { url_S, port_S, entryPoint_S, url_L, port_L, entryPoint_L, url_M, port_M, entryPoint_M, url_P, port_P, entryPoint_P} from './server';
 
 const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
 const URL_L = `http://${url_L}:${port_L}/${entryPoint_L}`;
 const URL_M = `http://${url_M}:${port_M}/${entryPoint_M}`;
+const URL_P = `http://${url_P}:${port_P}/${entryPoint_P}`;
 
 const resolvers = {
 	Query: {
@@ -21,10 +22,13 @@ const resolvers = {
 		allMenus: (_) =>
 			getRequest(URL_M, '/'),
 		menuByRestaurant: (_, { id_restaurant }) =>
-			generalRequest(`${URL_M}/?id_lunchroom=${id_restaurant}`, 'GET'),
-		// Tickets
-		
+			generalRequest(`${URL_M}/?id_lunchroom=${id_restaurant}`, 'GET'),		
 		// Ratings-reviews
+		allPosts: (_) =>
+			getRequest(URL_P, '/'),
+		postByRestaurant: (_, { id_restaurant }) =>
+			generalRequest(`${URL_P}/${id_restaurant}`, 'GET'),
+		// Tickets
 	},
 	Mutation: {
 		// Statistics
@@ -34,7 +38,7 @@ const resolvers = {
 			generalRequest(`${URL_S}/${id_statistic}`, 'DELETE'),
 		// Lunchrooms
 		updateLunchroom: (_, { id_lunchroom, lunchroom }) =>
-			generalRequest(`${URL_L}/${id_lunchroom}`, 'PUT', lunchroom),
+			generalRequest(`${URL_L}/${id_lunchroom}`, 'PATCH', lunchroom),
 		createLunchroom: (_, { lunchroom }) =>
 			generalRequest(`${URL_L}`, 'POST', lunchroom),
 		deleteLunchroom: (_, { id_lunchroom }) =>
@@ -44,8 +48,10 @@ const resolvers = {
 			generalRequest(`${URL_M}/?id_lunchroom=${id_restaurant}`, 'PUT', menu),
 		createMenu: (_, { menu }) =>
 			generalRequest(`${URL_M}/`, 'POST', menu),
-		// Tickets
 		// Ratings-reviews
+		createPost: (_, { post }) =>
+			generalRequest(`${URL_P}/`, 'POST', post),
+		// Tickets
 	}
 };
 

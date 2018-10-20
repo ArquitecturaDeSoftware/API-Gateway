@@ -7,3 +7,6 @@ export const entryPoint_L = process.env.LUNCHROOM_ENTRY
 export const url_M = process.env.MENU_URL
 export const port_M = process.env.MENU_PORT
 export const entryPoint_M = process.env.MENU_ENTRY
+export const url_P = process.env.POST_URL
+export const port_P = process.env.POST_PORT
+export const entryPoint_P = process.env.POST_ENTRY
