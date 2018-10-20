@@ -4,3 +4,6 @@ export const entryPoint_S = process.env.STATISTICS_ENTRY
 export const url_L = process.env.LUNCHROOM_URL
 export const port_L = process.env.LUNCHROOM_PORT
 export const entryPoint_L = process.env.LUNCHROOM_ENTRY
+export const url_M = process.env.MENU_URL
+export const port_M = process.env.MENU_PORT
+export const entryPoint_M = process.env.MENU_ENTRY

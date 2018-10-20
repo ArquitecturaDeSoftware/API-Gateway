@@ -5,11 +5,14 @@ services:
     environment:
       PORT: '5000'
       SHOW_URLS: 'true'
-      STATISTICS_URL: '192.168.99.101'
+      STATISTICS_URL: '35.237.28.248'
       STATISTICS_PORT: '8800'
       STATISTICS_ENTRY: 'statistics'
-      LUNCHROOM_URL: ''
-      LUNCHROOM_PORT: ''
-      LUNCHROOM_ENTRY: ''
+      LUNCHROOM_URL: '35.196.178.181'
+      LUNCHROOM_PORT: '9000'
+      LUNCHROOM_ENTRY: 'lunchrooms'
+      MENU_URL: '35.190.158.114'
+      MENU_PORT: '3000'
+      MENU_ENTRY: 'api/menus'
     ports:
       - '5000:5000'

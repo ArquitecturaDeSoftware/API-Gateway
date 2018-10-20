@@ -61,7 +61,7 @@ export function addParams(url, parameters) {
  * @return {Promise.<*>}
  */
 export function getRequest(url, path, parameters) {
-	const queryUrl = addParams(`${url}/${path}`, parameters);
+	const queryUrl = addParams(`${url}${path}`, parameters);
 	return generalRequest(queryUrl, 'GET');
 }
 
