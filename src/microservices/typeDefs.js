@@ -12,7 +12,7 @@ input StatisticInput {
 }
 type Statistic {
     id: String!
-    id_restaurant: Lunchroom!
+    id_restaurant: String!
     date: String!
     sold_lunches: Int!
     canceled_shifts: Int!
@@ -44,15 +44,12 @@ input LunchroomInput{
     building: String!
 }
 type Lunchroom{
-    _id: Lunchroom_ID!
+    _id: String!
     name: String!
     numlunch: Int!
     openTime: String!
     closeTime: String!
     building: String!
-}
-type Lunchroom_ID{
-    soid: String!
 }
 
 
