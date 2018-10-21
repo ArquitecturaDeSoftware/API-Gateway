@@ -1,0 +1,158 @@
+-------------------------------------------------------------------> Statistics
+
+query{
+  allStatistics{
+    t{
+      date
+      id_restaurant{
+        name
+      }
+    }
+  }
+}
+
+query{
+  statisticByRestaurant(id_restaurant:"5bb03e93df468869bd91340b"){
+    t{
+      id_restaurant{
+        name
+      }
+    }
+  }
+}
+
+mutation{
+  createStatistic(statistic:{
+    id_restaurant: "5bb03e93df468869bd91340b"
+    date: "25-04-1997"
+    sold_lunches: 34
+    canceled_shifts: 0
+    av_time: 345.55
+    av_punctuation: 4.3
+    bonus_sold: 2
+    student_sold: 23
+    external_sold: 12    
+  }){
+    t{
+      date
+    }
+  }
+}
+
+mutation{
+  deleteStatistic(id_statistic:"5bc4d445a5d4c0025745919d"){
+    err
+  }
+}
+
+-------------------------------------------------------------------> Lunchrooms
+
+query{
+  allLunchrooms{
+    name
+  }
+}
+
+query{
+  lunchroomById(id_lunchroom:"5bb03e93df468869bd91340b"){
+    name
+  }
+}
+
+mutation{
+  updateLunchroom(id_lunchroom:"5bca8a31d3040a439fdf481e", lunchroom:{
+    name:"asdasd"
+    numlunch: 34
+    openTime: "123123"
+    closeTime: "231123"
+    building: "asdaskk"
+  }){
+    building
+  }
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Central"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"Biblioteca central"
+  })
+}
+
+mutation{
+  deleteLunchroom(id_lunchroom:"5bb03e93df468869bd91340b")
+}
+
+-------------------------------------------------------------------> Menu
+
+query{
+  allMenus{
+    date
+    id_lunchroom
+  }
+}
+
+query{
+  menuByRestaurant(id_restaurant:"5bca8a31d3040a439fdf481y"){
+    appetizer
+  }
+}
+
+mutation{
+  updateMenu(id_menu:"5bca8a31d3040a439fdf481e", menu:{
+    soup: "Arroz"
+    appetizer: "asdasd"
+    main_course: "ascacs"
+    protein: "asawfav"
+    juice: "asokfe"
+    dessert: "asdjasidji"
+    salad: "asodkpp"
+  }){
+    msg
+  }
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bca8a31d3040a439fdf481z"
+    soup: "asdasda"
+    appetizer: "awaqd"
+    main_course: "asadad"
+    protein: "adqweqwe"
+    juice: "plwepl"
+    dessert: "asdqwe"
+    salad: "pqwlpe"
+  })
+}
+
+
+------------------------------------------------------------------->Posts
+
+query{
+  allPosts{
+    restaurant_id
+  }
+}
+
+query{
+  postByRestaurant(id_restaurant:"1231231232"){
+    created_on
+  }
+}
+
+mutation{
+  createPost(post:{
+    id:12112
+    text:"adASAs"
+    author_name:"dfaslma"
+    author_email:"asksdaodsk"
+    restaurant_id:"5bca8a31d3040a439fdf481e"
+    score:4
+  }){
+    restaurant_id
+  }
+}
+ 
+-------------------------------------------------------------------> 
