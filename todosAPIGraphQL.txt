@@ -160,14 +160,14 @@ query{
 }
 
 {
-  "query":"{  menusByRestaurant(id_restaurant:\"5bca8a31d3040a439fdf481y\"){    appetizer  }}"
+  "query":"{  menusByRestaurant(id_restaurant:\"5bca8a31d3040a439fdf481az\"){    appetizer  }}"
 }
 
 
 
 
 mutation{
-  updateMenu(id_menu:"5bca8a31d3040a439fdf481e", menu:{
+  updateMenu(id_restaurant:"5bca8a31d3040a439fdf481az", menu:{
     soup: "Arroz"
     appetizer: "asdasd"
     main_course: "ascacs"
@@ -181,7 +181,7 @@ mutation{
 }
 
 {
-  "query":"mutation{  updateMenu(id_menu:\"15\", menu:{    soup: \"Arroz\"    appetizer: \"asdasd\"    main_course: \"ascacs\"    protein: \"asawfav\"    juice: \"asokfe\"    dessert: \"asdjasidji\"    salad: \"asodkpp\"  }){    msg  }}"
+  "query":"mutation{  updateMenu(id_restaurant:\"5bca8a31d3040a439fdf481az\", menu:{    soup: \"Arroz\"    appetizer: \"asdasd\"    main_course: \"ascacs\"    protein: \"asawfav\"    juice: \"asokfe\"    dessert: \"asdjasidji\"    salad: \"asodkpp\"  }){    msg  }}"
 }
 
 
