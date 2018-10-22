@@ -107,6 +107,25 @@ type Posts{
     author_email: String!
     restaurant_id: String!
     score: Int!
+}
+
+
+
+input TicketInput{
+    lunchroomId: String!
+    userId: Int!
+    price: Int!
+}
+input Ticket_PATCH{
+    status: String!
+}
+type Tickets{
+    id: Int!
+    lunchroomId: String!
+    userid: Int
+    status: String!
+    price: Int!
+    date: String!
 }`;
 
 
@@ -118,10 +137,16 @@ export const microservicesQueries = `
     lunchroomById(id_lunchroom: String!): Lunchroom!
 
     allMenus: [Menus]!
-    menuByRestaurant(id_restaurant: String!): [Menus]! 
+    menusByRestaurant(id_restaurant: String!): [Menus]! 
 
     allPosts: [Posts]!
-    postByRestaurant(id_restaurant: String!): [Posts]!
+    postsByRestaurant(id_restaurant: String!): [Posts]!
+
+    allTickets: [Tickets]!
+    ticketsByUser(id_user: String!): [Tickets]!
+    ticketsByRestaurant(id_restaurant: String!): [Tickets]!
+    ticketByID(id_ticket: String!): Tickets!
+    nextTicket(id_restaurant: String!): Tickets!
 `;
 
 
@@ -137,6 +162,10 @@ export const microservicesMutations = `
     createMenu(menu: MenuInput_POST!): String 
 
     createPost(post: PostInput!): Posts
+
+    createTicket(ticket: TicketInput!): Tickets
+    deleteTicket(id_ticket: String!): String
+    updateTicket(id_ticket: String!, ticket: Ticket_PATCH!): Tickets
 `; 
 
 

@@ -95,7 +95,7 @@ query{
 }
 
 query{
-  menuByRestaurant(id_restaurant:"5bca8a31d3040a439fdf481y"){
+  menusByRestaurant(id_restaurant:"5bca8a31d3040a439fdf481y"){
     appetizer
   }
 }
@@ -137,7 +137,7 @@ query{
 }
 
 query{
-  postByRestaurant(id_restaurant:"1231231232"){
+  postsByRestaurant(id_restaurant:"1231231232"){
     created_on
   }
 }
@@ -155,4 +155,81 @@ mutation{
   }
 }
  
--------------------------------------------------------------------> 
+------------------------------------------------------------------->Tickets
+
+query{
+  allTickets{
+    id
+    lunchroomId
+    userid
+    status
+    price
+    date
+  }
+}
+
+query{
+  ticketsByUser(id_user:"1032490297"){
+    id
+    lunchroomId
+    userid
+    status
+    price
+    date
+  }
+}
+
+query{
+  ticketsByRestaurant(id_restaurant:"1"){
+    id
+    lunchroomId
+    userid
+    status
+    price
+    date
+  }
+}
+
+query{
+  ticketByID(id_ticket:"2"){
+    id
+    lunchroomId
+    userid
+    price
+    date
+    status
+  }
+}
+
+query{
+  nextTicket(id_restaurant:"1"){
+    id
+    lunchroomId
+    userid
+    status
+    price
+    date
+  }
+}
+
+mutation{
+  createTicket(ticket:{
+    lunchroomId:"asdasdasd"
+    userId: 1032490297
+    price: 6500
+  }){
+    id
+  }
+}
+
+mutation{
+  deleteTicket(id_ticket: "3")
+}
+
+mutation{
+  updateTicket(id_ticket: "1", ticket:{
+    status: "ERROR"
+  }){
+    lunchroomId
+  }
+}

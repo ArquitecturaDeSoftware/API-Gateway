@@ -1,10 +1,15 @@
 import { generalRequest, getRequest } from '../utilities';
-import { url_S, port_S, entryPoint_S, url_L, port_L, entryPoint_L, url_M, port_M, entryPoint_M, url_P, port_P, entryPoint_P} from './server';
+import { url_S, port_S, entryPoint_S,
+	 url_L, port_L, entryPoint_L, 
+	 url_M, port_M, entryPoint_M,
+	 url_P, port_P, entryPoint_P,
+	 url_T, port_T, entryPoint_T} from './server';
 
 const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
 const URL_L = `http://${url_L}:${port_L}/${entryPoint_L}`;
 const URL_M = `http://${url_M}:${port_M}/${entryPoint_M}`;
 const URL_P = `http://${url_P}:${port_P}/${entryPoint_P}`;
+const URL_T = `http://${url_T}:${port_T}/${entryPoint_T}`;
 
 const resolvers = {
 	Query: {
@@ -21,14 +26,25 @@ const resolvers = {
 		// Menus
 		allMenus: (_) =>
 			getRequest(URL_M, '/'),
-		menuByRestaurant: (_, { id_restaurant }) =>
+		menusByRestaurant: (_, { id_restaurant }) =>
 			generalRequest(`${URL_M}/?id_lunchroom=${id_restaurant}`, 'GET'),		
 		// Ratings-reviews
 		allPosts: (_) =>
 			getRequest(URL_P, '/'),
-		postByRestaurant: (_, { id_restaurant }) =>
+		postsByRestaurant: (_, { id_restaurant }) =>
 			generalRequest(`${URL_P}/${id_restaurant}`, 'GET'),
 		// Tickets
+		allTickets: (_) =>
+			getRequest(`${URL_T}`, '/'),
+		ticketsByUser: (_, { id_user }) =>
+			generalRequest(`${URL_T}/user/${id_user}`, 'GET'),
+		ticketsByRestaurant: (_, { id_restaurant }) =>
+			generalRequest(`${URL_T}/lunchroom/${id_restaurant}`, 'GET'),
+		ticketByID: (_, { id_ticket }) =>
+			generalRequest(`${URL_T}/${id_ticket}`, 'GET'),
+		nextTicket: (_, { id_restaurant }) =>
+			generalRequest(`http://${url_T}:${port_T}/nextticket/${id_restaurant}`, 'GET'),
+
 	},
 	Mutation: {
 		// Statistics
@@ -52,6 +68,12 @@ const resolvers = {
 		createPost: (_, { post }) =>
 			generalRequest(`${URL_P}/`, 'POST', post),
 		// Tickets
+		updateTicket: (_, {id_ticket, ticket }) =>
+			generalRequest(`${URL_T}/${id_ticket}`, 'PUT', ticket),
+		createTicket: (_, { ticket }) =>
+			generalRequest(`${URL_T}`, 'POST', ticket),
+		deleteTicket: (_, { id_ticket }) =>
+			generalRequest(`${URL_T}/${id_ticket}`, 'DELETE'),
 	}
 };
 

@@ -17,5 +17,8 @@ services:
       POST_URL: '104.196.222.74'
       POST_PORT: '8000'
       POST_ENTRY: 'posts'
+      TICKETS_URL: '35.237.134.192'
+      TICKETS_PORT: '4200'
+      TICKETS_ENTRY: 'tickets'
     ports:
       - '5000:5000'
