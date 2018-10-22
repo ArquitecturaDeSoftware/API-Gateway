@@ -107,7 +107,7 @@ mutation{
 
 {
   "query":"mutation{updateLunchroom(id_lunchroom:\"5bcc033619000017fe0dfb56\", lunchroom:{name:\"Geologia\" numlunch:34 openTime:\"11:30\" closeTime:\"15:00\" building:\"400 - Edificio Geologia\"}){building}}" 
-}
+} 
 
 
 
