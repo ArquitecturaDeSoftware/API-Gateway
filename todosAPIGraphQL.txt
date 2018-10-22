@@ -4,9 +4,6 @@ query{
   allStatistics{
     t{
       date
-      id_restaurant{
-        name
-      }
     }
   }
 }
@@ -14,9 +11,7 @@ query{
 query{
   statisticByRestaurant(id_restaurant:"5bb03e93df468869bd91340b"){
     t{
-      id_restaurant{
-        name
-      }
+      date
     }
   }
 }
@@ -232,4 +227,14 @@ mutation{
   }){
     lunchroomId
   }
+}
+
+
+
+
+
+
+metodo POST a la url del api
+{
+  "query":"{statisticByRestaurant(id_restaurant:\"5bb03e93df468869bd91340b\"){t{date}}}"
 }
