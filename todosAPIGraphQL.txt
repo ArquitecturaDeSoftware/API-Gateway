@@ -8,6 +8,13 @@ query{
   }
 }
 
+{
+  "query":"{ticketsByUser(id_user:\"1026586705\"){id}}" 
+}
+
+
+
+
 query{
   statisticByRestaurant(id_restaurant:"5bb03e93df468869bd91340b"){
     t{
@@ -15,6 +22,13 @@ query{
     }
   }
 }
+
+{
+  "query":"{statisticByRestaurant(id_restaurant:\"5bb03e93df468869bd91340b\"){t{date}}}"  
+}
+
+
+
 
 mutation{
   createStatistic(statistic:{
@@ -34,10 +48,21 @@ mutation{
   }
 }
 
+{
+  "query":"mutation{createStatistic(statistic:{id_restaurant:\"5bb03e93df468869bd91340b\" date:\"25-04-1997\" sold_lunches:34 canceled_shifts:0 av_time:345.55 av_punctuation:4.3 bonus_sold:2 student_sold:23 external_sold:12}){t{date}}}"  
+}
+
+
+
+
 mutation{
   deleteStatistic(id_statistic:"5bc4d445a5d4c0025745919d"){
     err
   }
+}
+
+{
+  "query":"mutation{deleteStatistic(id_statistic:\"5bcd266093ae71023b7eba79\"){err}}" 
 }
 
 -------------------------------------------------------------------> Lunchrooms
@@ -48,23 +73,44 @@ query{
   }
 }
 
+{
+  "query":"{allLunchrooms{name}}" 
+}
+
+
+
+
 query{
-  lunchroomById(id_lunchroom:"5bb03e93df468869bd91340b"){
+  lunchroomById(id_lunchroom:"5bcc033619000017fe0dfb56"){
     name
   }
 }
 
+{
+  "query":"{lunchroomById(id_lunchroom: \"5bcc033619000017fe0dfb56\"){name}}" 
+}
+
+
+
+
 mutation{
-  updateLunchroom(id_lunchroom:"5bca8a31d3040a439fdf481e", lunchroom:{
-    name:"asdasd"
+  updateLunchroom(id_lunchroom:"5bcc033619000017fe0dfb56  ", lunchroom:{
+    name:"Geologia"
     numlunch: 34
-    openTime: "123123"
-    closeTime: "231123"
-    building: "asdaskk"
+    openTime: "11:30"
+    closeTime: "15:00"
+    building: "400 - Edificio Geologia"
   }){
     building
   }
 }
+
+{
+  "query":"mutation{updateLunchroom(id_lunchroom:\"5bcc033619000017fe0dfb56\", lunchroom:{name:\"Geologia\" numlunch:34 openTime:\"11:30\" closeTime:\"15:00\" building:\"400 - Edificio Geologia\"}){building}}" 
+}
+
+
+
 
 mutation{
   createLunchroom(lunchroom:{
@@ -76,8 +122,19 @@ mutation{
   })
 }
 
+{
+  "query":"mutation{createLunchroom(lunchroom:{name:\"Central\" numlunch:230 openTime:\"6:30\" closeTime:\"3:00\" building:\"Biblioteca central\"})}" 
+}
+
+
+
+
 mutation{
   deleteLunchroom(id_lunchroom:"5bb03e93df468869bd91340b")
+}
+
+{
+  "query":"mutation{deleteLunchroom(id_lunchroom:\"5bcd29e49804009c34a9746c\")}"  
 }
 
 -------------------------------------------------------------------> Menu
@@ -89,11 +146,25 @@ query{
   }
 }
 
+{
+  "query":"{allMenus{date id_lunchroom}}" 
+}
+
+
+
+
 query{
   menusByRestaurant(id_restaurant:"5bca8a31d3040a439fdf481y"){
     appetizer
   }
 }
+
+{
+  "query":"{  menusByRestaurant(id_restaurant:\"5bca8a31d3040a439fdf481y\"){    appetizer  }}"
+}
+
+
+
 
 mutation{
   updateMenu(id_menu:"5bca8a31d3040a439fdf481e", menu:{
@@ -109,6 +180,12 @@ mutation{
   }
 }
 
+{
+  "query":"mutation{  updateMenu(id_menu:\"15\", menu:{    soup: \"Arroz\"    appetizer: \"asdasd\"    main_course: \"ascacs\"    protein: \"asawfav\"    juice: \"asokfe\"    dessert: \"asdjasidji\"    salad: \"asodkpp\"  }){    msg  }}"
+}
+
+
+
 mutation{
   createMenu(menu:{
     id_lunchroom: "5bca8a31d3040a439fdf481z"
@@ -122,6 +199,9 @@ mutation{
   })
 }
 
+{
+  "query":"mutation{createMenu(menu:{id_lunchroom: \"5bca8a31d3040a439fdf481az\" soup: \"asdasda\" appetizer: \"awaqd\" main_course: \"asadad\" protein: \"adqweqwe\" juice: \"plwepl\" dessert: \"baklava\" salad: \"pqwlpe\"})}"
+}
 
 ------------------------------------------------------------------->Posts
 
@@ -131,11 +211,25 @@ query{
   }
 }
 
+{
+  "query":"{  allPosts{    restaurant_id  }}"
+}
+
+
+
+
 query{
-  postsByRestaurant(id_restaurant:"1231231232"){
+  postsByRestaurant(id_restaurant:"5bca8a31d3040a439fdf481e"){
     created_on
   }
 }
+
+{
+  "query":"{    postsByRestaurant(id_restaurant:\"5bca8a31d3040a439fdf481e\"){      created_on    }  }"
+}
+
+
+
 
 mutation{
   createPost(post:{
@@ -148,6 +242,10 @@ mutation{
   }){
     restaurant_id
   }
+}
+
+{
+  "query":"mutation{    createPost(post:{      id:12112      text:\"adASAs\"      author_name:\"dfaslma\"      author_email:\"asksdaodsk\" restaurant_id:\"5bca8a31d3040a439fdf481e\"      score:4    }){      restaurant_id    }  }"
 }
  
 ------------------------------------------------------------------->Tickets
@@ -163,6 +261,13 @@ query{
   }
 }
 
+{
+  "query":"{ allTickets{ id lunchroomId userid status price date }}"
+}
+
+
+
+
 query{
   ticketsByUser(id_user:"1032490297"){
     id
@@ -173,6 +278,13 @@ query{
     date
   }
 }
+
+{
+  "query":"{ ticketsByUser(id_user:\"1026586705\"){ id lunchroomId userid status price date }}"
+}
+
+
+
 
 query{
   ticketsByRestaurant(id_restaurant:"1"){
@@ -185,6 +297,13 @@ query{
   }
 }
 
+{
+  "query":"{ ticketsByRestaurant(id_restaurant:\"asd132das46\"){ id lunchroomId userid status price date }}"
+}
+
+
+
+
 query{
   ticketByID(id_ticket:"2"){
     id
@@ -195,6 +314,13 @@ query{
     status
   }
 }
+
+{
+  "query":"query{ticketByID(id_ticket:\"1\"){ id lunchroomId userid price date status }}"
+}
+
+
+
 
 query{
   nextTicket(id_restaurant:"1"){
@@ -207,6 +333,13 @@ query{
   }
 }
 
+{
+  "query":"query{ nextTicket(id_restaurant:\"1\"){ id lunchroomId userid status price date}}"
+}
+
+
+
+
 mutation{
   createTicket(ticket:{
     lunchroomId:"asdasdasd"
@@ -217,9 +350,23 @@ mutation{
   }
 }
 
-mutation{
-  deleteTicket(id_ticket: "3")
+{
+  "query":"mutation{  createTicket(ticket:{    lunchroomId:\"asdasdasd\"    userId: 1032490297    price: 6500  }){  id  }}"
 }
+
+
+
+
+mutation{
+  deleteTicket(id_ticket: "2")
+}
+
+{
+  "query":"mutation{  deleteTicket(id_ticket: \"2\")}"
+}
+
+
+
 
 mutation{
   updateTicket(id_ticket: "1", ticket:{
@@ -229,12 +376,7 @@ mutation{
   }
 }
 
-
-
-
-
-
-metodo POST a la url del api
 {
-  "query":"{statisticByRestaurant(id_restaurant:\"5bb03e93df468869bd91340b\"){t{date}}}"
+  "query":"mutation{ updateTicket(id_ticket: \"1\", ticket:{    status: \"ERROR\"  }){    lunchroomId  }}"
 }
+

@@ -158,7 +158,7 @@ export const microservicesMutations = `
     createLunchroom(lunchroom: LunchroomInput!): String
     deleteLunchroom(id_lunchroom: String!): String
 
-    updateMenu(id_menu: String!, menu: MenuInput_PUT!): MenuResponse_PUT
+    updateMenu(id_restaurant: String!, menu: MenuInput_PUT!): MenuResponse_PUT
     createMenu(menu: MenuInput_POST!): String 
 
     createPost(post: PostInput!): Posts
