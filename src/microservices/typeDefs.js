@@ -42,6 +42,8 @@ input LunchroomInput{
     openTime: String!
     closeTime: String!
     building: String!
+    code: String!
+    principalCount: Int!
 }
 type Lunchroom{
     _id: String!
@@ -50,6 +52,8 @@ type Lunchroom{
     openTime: String!
     closeTime: String!
     building: String!
+    code: String!
+    principalCount: Int!
 }
 
 
@@ -115,6 +119,7 @@ input TicketInput{
     lunchroomId: String!
     userId: Int!
     price: Int!
+    name: String!
 }
 input Ticket_PATCH{
     status: String!
@@ -126,6 +131,7 @@ type Tickets{
     status: String!
     price: Int!
     date: String!
+    name: String!
 }`;
 
 

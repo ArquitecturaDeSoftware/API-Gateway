@@ -9,7 +9,7 @@ query{
 }
 
 {
-  "query":"{ticketsByUser(id_user:\"1026586705\"){id}}" 
+  "query":"{allStatistics{t{date}}}" 
 }
 
 
@@ -233,11 +233,11 @@ query{
 
 mutation{
   createPost(post:{
-    id:12112
+    id:11342
     text:"adASAs"
     author_name:"dfaslma"
     author_email:"asksdaodsk"
-    restaurant_id:"5bca8a31d3040a439fdf481e"
+    restaurant_id:"5bce0d459804009c34a97474"
     score:4
   }){
     restaurant_id
