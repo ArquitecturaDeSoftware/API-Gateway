@@ -3,13 +3,15 @@ import { url_S, port_S, entryPoint_S,
 	 url_L, port_L, entryPoint_L, 
 	 url_M, port_M, entryPoint_M,
 	 url_P, port_P, entryPoint_P,
-	 url_T, port_T, entryPoint_T} from './server';
+	 url_T, port_T, entryPoint_T,
+	 url_U, port_U, entryPoint_U } from './server'; 
 
 const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
 const URL_L = `http://${url_L}:${port_L}/${entryPoint_L}`;
 const URL_M = `http://${url_M}:${port_M}/${entryPoint_M}`;
 const URL_P = `http://${url_P}:${port_P}/${entryPoint_P}`;
 const URL_T = `http://${url_T}:${port_T}/${entryPoint_T}`;
+const URL_U = `http://${url_U}:${port_U}/${entryPoint_U}`;
 
 const resolvers = {
 	Query: {
@@ -44,7 +46,11 @@ const resolvers = {
 			generalRequest(`${URL_T}/${id_ticket}`, 'GET'),
 		nextTicket: (_, { id_restaurant }) =>
 			generalRequest(`http://${url_T}:${port_T}/nextticket/${id_restaurant}`, 'GET'),
-
+		ticketsBefore: (_, { id_ticket }) =>
+			generalRequest(`${URL_T}/before/${id_ticket}`, 'GET'),
+		// Users
+		userById: (_, { id_user }) =>
+			generalRequest(`${URL_U}/${id_user}`, 'GET'),
 	},
 	Mutation: {
 		// Statistics
@@ -74,6 +80,13 @@ const resolvers = {
 			generalRequest(`${URL_T}`, 'POST', ticket),
 		deleteTicket: (_, { id_ticket }) =>
 			generalRequest(`${URL_T}/${id_ticket}`, 'DELETE'),
+		// USers
+		updateUser: (_, {id_user, user }) =>
+			generalRequest(`${URL_U}/${id_user}`, 'PUT', user),
+		createUser: (_, { user }) =>
+			generalRequest(`${URL_U}/`, 'POST', user),
+		deleteUser: (_, { id_user }) =>
+			generalRequest(`${URL_U}/${id_user}`, 'DELETE'),
 	}
 };
 

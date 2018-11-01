@@ -20,5 +20,8 @@ services:
       TICKETS_URL: '35.237.134.192'
       TICKETS_PORT: '4200'
       TICKETS_ENTRY: 'tickets'
+      USERS_URL: '104.154.178.225'
+      USERS_PORT: '8800'
+      USERS_ENTRY: 'users'
     ports:
       - '5000:5000'

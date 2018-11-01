@@ -100,6 +100,8 @@ mutation{
     openTime: "11:30"
     closeTime: "15:00"
     building: "400 - Edificio Geologia"
+    code: "G-"
+    principalCount: 1
   }){
     building
   }
@@ -119,6 +121,8 @@ mutation{
     openTime:"6:30"
     closeTime:"3:30"
     building:"Biblioteca central"
+    code: "G-"
+    principalCount: 1
   })
 }
 
@@ -258,6 +262,7 @@ query{
     status
     price
     date
+    name
   }
 }
 
@@ -276,6 +281,7 @@ query{
     status
     price
     date
+    name
   }
 }
 
@@ -294,6 +300,7 @@ query{
     status
     price
     date
+    name
   }
 }
 
@@ -312,6 +319,7 @@ query{
     price
     date
     status
+    name
   }
 }
 
@@ -330,6 +338,7 @@ query{
     status
     price
     date
+    name
   }
 }
 
@@ -340,11 +349,21 @@ query{
 
 
 
+query{
+  ticketsBefore(id_ticket:"2"){
+    id
+  }
+}
+
+
+
+
 mutation{
   createTicket(ticket:{
     lunchroomId:"asdasdasd"
     userId: 1032490297
     price: 6500
+    name: "G-"
   }){
     id
   }
@@ -380,3 +399,52 @@ mutation{
   "query":"mutation{ updateTicket(id_ticket: \"1\", ticket:{    status: \"ERROR\"  }){    lunchroomId  }}"
 }
 
+
+------------------------------------------------------------------->Users
+
+query{
+  userById(id_user:"5bd942a0f68d7602370b38e3"){
+    t{
+      id
+    }
+  }
+}
+
+
+
+
+mutation{
+  createUser(user:{
+    cedula:"2345678"
+    name:"Juanito"
+    lunchroom_id:"assdffgjhutyhtr"
+    active_ticket:"2"
+  }){
+    t{
+      id
+    }
+  }
+}
+
+
+
+
+mutation{
+  updateUser(id_user:"5bdb5134f68d7602370b38e5", user:{
+    cedula:"123"
+    name:"Juancho"
+    lunchroom_id:"asdf"
+    active_ticket:"asdfg"
+  }){
+    err
+  }
+}
+
+
+
+
+mutation{
+  deleteUser(id_user:"5bdb5134f68d7602370b38e5"){
+    err
+  }
+}

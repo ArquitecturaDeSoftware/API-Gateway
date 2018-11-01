@@ -13,3 +13,6 @@ export const entryPoint_P = process.env.POST_ENTRY
 export const url_T = process.env.TICKETS_URL
 export const port_T = process.env.TICKETS_PORT
 export const entryPoint_T = process.env.TICKETS_ENTRY
+export const url_U = process.env.USERS_URL
+export const port_U = process.env.USERS_PORT
+export const entryPoint_U = process.env.USERS_ENTRY
