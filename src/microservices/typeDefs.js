@@ -202,7 +202,7 @@ export const microservicesMutations = `
     updateMenu(id_restaurant: String!, menu: MenuInput_PUT!): MenuResponse_PUT
     createMenu(menu: MenuInput_POST!): String 
 
-    createPost(post: PostInput!): Posts
+    createPost(post: PostInput!): Posts 
 
     createTicket(ticket: TicketInput!): Tickets
     deleteTicket(id_ticket: String!): String
