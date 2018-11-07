@@ -49,8 +49,8 @@ const resolvers = {
 		ticketsBefore: (_, { id_ticket }) =>
 			generalRequest(`${URL_T}/before/${id_ticket}`, 'GET'),
 		// Users
-		userById: (_, { id_user }) =>
-			generalRequest(`${URL_U}/${id_user}`, 'GET'),
+		userById: (_, { cedula_user }) =>
+			generalRequest(`${URL_U}/${cedula_user}`, 'GET'),
 	},
 	Mutation: {
 		// Statistics

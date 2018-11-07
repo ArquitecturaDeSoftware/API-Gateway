@@ -330,6 +330,7 @@ query{
 
 
 
+Siguiente turno en waiting o calling del restaurante
 query{
   nextTicket(id_restaurant:"1"){
     id
@@ -349,6 +350,7 @@ query{
 
 
 
+Tickets que estan antes del turno actual
 query{
   ticketsBefore(id_ticket:"2"){
     id
