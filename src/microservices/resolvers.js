@@ -1,4 +1,4 @@
-import { generalRequest, getRequest } from '../utilities';
+import { generalRequest, getRequest, generalRequestHead } from '../utilities';
 import { url_S, port_S, entryPoint_S,
 	 url_L, port_L, entryPoint_L, 
 	 url_M, port_M, entryPoint_M,
@@ -51,7 +51,10 @@ const resolvers = {
 		// Users
 		userById: (_, { cedula_user }) =>
 			generalRequest(`${URL_U}/${cedula_user}`, 'GET'),
-	},
+		verifyToken: (_, { token }) =>
+			generalRequestHead(`${URL_U}/${cedula_user}`, 'GET', token),
+		
+	}, 
 	Mutation: {
 		// Statistics
 		createStatistic: (_, { statistic }) =>
@@ -84,9 +87,12 @@ const resolvers = {
 		updateUser: (_, {id_user, user }) =>
 			generalRequest(`${URL_U}/${id_user}`, 'PUT', user),
 		createUser: (_, { user }) =>
-			generalRequest(`${URL_U}/`, 'POST', user),
+			generalRequest(`${URL_U}`, 'POST', user),
 		deleteUser: (_, { id_user }) =>
 			generalRequest(`${URL_U}/${id_user}`, 'DELETE'),
+		login: (_, { login }) =>
+			generalRequest(`${URL_U}/auth`, 'POST', login),
+		
 	}
 };
 

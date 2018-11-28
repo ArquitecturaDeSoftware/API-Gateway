@@ -405,7 +405,7 @@ mutation{
 ------------------------------------------------------------------->Users
 
 query{
-  userById(id_user:"5bd942a0f68d7602370b38e3"){
+  userById(cedula_user:"1032490297"){
     t{
       id
     }
@@ -421,6 +421,7 @@ mutation{
     name:"Juanito"
     lunchroom_id:"assdffgjhutyhtr"
     active_ticket:"2"
+    password:""
   }){
     t{
       id
@@ -433,9 +434,6 @@ mutation{
 
 mutation{
   updateUser(id_user:"5bdb5134f68d7602370b38e5", user:{
-    cedula:"123"
-    name:"Juancho"
-    lunchroom_id:"asdf"
     active_ticket:"asdfg"
   }){
     err

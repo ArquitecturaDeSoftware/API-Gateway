@@ -147,23 +147,15 @@ input UserPUT {
     active_ticket: String!
 }
 type Users{
-    id: String!
+    _id: String!
     cedula: String!
     name: String!
     lunchroom_id: String!
     active_ticket: String!
-    password: String
 }
-type User_GET {
-    t : [Users]
-    err: String
-}
-type User_POST {
-    t : Users
-    err: String
-}
-type User_DEL_PUT {
-    err: String
+input Login{
+    name: String!
+    password: String!
 }`;
 
 
@@ -187,7 +179,8 @@ export const microservicesQueries = `
     nextTicket(id_restaurant: String!): Tickets!
     ticketsBefore(id_ticket: String!): [Tickets]!
 
-    userById(cedula_user: String!): User_GET
+    userById(cedula_user: String!): Users!
+    verifyToken(token: String!): String!
 `;
 
 
@@ -208,7 +201,8 @@ export const microservicesMutations = `
     deleteTicket(id_ticket: String!): String
     updateTicket(id_ticket: String!, ticket: Ticket_PATCH!): Tickets
 
-    createUser(user: UserInput!): User_POST
-    deleteUser(id_user: String!): User_DEL_PUT
-    updateUser(id_user: String!, user: UserPUT): User_DEL_PUT
+    createUser(user: UserInput!): Users
+    deleteUser(id_user: String!): String
+    updateUser(id_user: String!, user: UserPUT): String
+    login(login: Login!): String
 `; 

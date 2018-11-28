@@ -1,0 +1,254 @@
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38aa3c0000859430adea"
+    soup: "Arroz"
+    appetizer: "Lenteja o Frijol"
+    main_course: "Arroz, platano en salsa dulce"
+    protein: "Carne de res, Pollo"
+    juice: "Mango"
+    dessert: "Gelatina"
+    salad: "Ensalada con frutas"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38d33c0000859430adeb"
+    soup: "Cuchuco"
+    appetizer: "Habichuela o Frijol"
+    main_course: "Arroz, platano en salsa dulce"
+    protein: "Carne de res, Pollo"
+    juice: "Mango"
+    dessert: "Gelatina"
+    salad: "Ensalada con frutas"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38db3c0000859430adec"
+    soup: "Avena"
+    appetizer: "Lenteja o Frijol"
+    main_course: "Arroz, platano en salsa dulce"
+    protein: "Carne de res, Pollo"
+    juice: "Mango"
+    dessert: "Gelatina"
+    salad: "Ensalada con frutas"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38e23c0000859430aded"
+    soup: "Ajiaco"
+    appetizer: "Garbanzo o Frijol"
+    main_course: "Arroz, yuca y papa"
+    protein: "Pescado o Pollo"
+    juice: "Fresa"
+    dessert: "Gelatina"
+    salad: "Pepinos"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38e93c0000859430adee"
+    soup: "Masamorra"
+    appetizer: "Lenteja o Pasta"
+    main_course: "Arroz y platano en salsa dulce"
+    protein: "Carne de res, Pescado"
+    juice: "Mora"
+    dessert: "Gelatina"
+    salad: "Ensalada con frutas"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38f03c0000859430adef"
+    soup: "Sopa de verduras"
+    appetizer: "Lenteja o Frijol"
+    main_course: "Arroz, platano en salsa dulce"
+    protein: "Carne de res o Pollo"
+    juice: "Limonada"
+    dessert: "Chocolatina"
+    salad: "Ensalada común sin cebolla"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb38f73c0000859430adf0"
+    soup: "Crema de ahuyama"
+    appetizer: "Frijol o Pasta"
+    main_course: "Arroz, papa y yuca"
+    protein: "Carne molida o Pollo"
+    juice: "Maracuyá"
+    dessert: "Erpo"
+    salad: "Ensalada común sin cebolla"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb39143c0000859430adf1"
+    soup: "Arroz"
+    appetizer: "Pasta o Frijol"
+    main_course: "Arroz, platano en salsa dulce"
+    protein: "Carne de res, Pollo"
+    juice: "Limonada"
+    dessert: "Gelatina"
+    salad: "Ensalada con frutas"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb39223c0000859430adf2"
+    soup: "Sopa de verduras"
+    appetizer: "Lenteja o arveja"
+    main_course: "Arroz y torta de ahuyama"
+    protein: "Carne de res, Pollo"
+    juice: "Mora"
+    dessert: "Gelatina"
+    salad: "Ensalada con frutas"
+  })
+}
+
+mutation{
+  createMenu(menu:{
+    id_lunchroom: "5bfb392b3c0000859430adf3"
+    soup: "Sopa de platano"
+    appetizer: "Lenteja o Frijol"
+    main_course: "Arroz, platano en salsa dulce"
+    protein: "Pescado o Pollo"
+    juice: "Mango"
+    dessert: "Banano"
+    salad: "Ensalada con frutas"
+  })
+}
+
+
+
+
+-----------------------------------------------------------------------------------
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Geología"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"224"
+    code: "G-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Comedor Central"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"103"
+    code: "C-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Biología"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"421"
+    code: "B-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Cafe Campus"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"213"
+    code: "CH-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Ciencias Agrarias"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"500"
+    code: "CA-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Ciencias Económicas"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"310"
+    code: "CE-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Ciencias Humanas"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"212"
+    code: "H-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Hemeroteca"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"571"
+    code: "HE-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Matemáticas"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"404"
+    code: "M-"
+    principalCount: 1
+  })
+}
+
+mutation{
+  createLunchroom(lunchroom:{
+    name:"Odontología"
+    numlunch:230
+    openTime:"6:30"
+    closeTime:"3:30"
+    building:"211"
+    code: "O-"
+    principalCount: 1
+  })
+}
