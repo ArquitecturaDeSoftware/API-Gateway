@@ -406,9 +406,7 @@ mutation{
 
 query{
   userById(cedula_user:"1032490297"){
-    t{
-      id
-    }
+    _id
   }
 }
 
@@ -421,11 +419,9 @@ mutation{
     name:"Juanito"
     lunchroom_id:"assdffgjhutyhtr"
     active_ticket:"2"
-    password:""
+    password:" "
   }){
-    t{
-      id
-    }
+    _id
   }
 }
 
@@ -435,16 +431,57 @@ mutation{
 mutation{
   updateUser(id_user:"5bdb5134f68d7602370b38e5", user:{
     active_ticket:"asdfg"
-  }){
-    err
-  }
+  })
 }
 
 
 
 
 mutation{
-  deleteUser(id_user:"5bdb5134f68d7602370b38e5"){
-    err
+  deleteUser(id_user:"5bdb5134f68d7602370b38e5")
+}
+
+
+------------------------------------------------------------------------tokens
+
+query{
+  statisticByRestaurantToken(id_restaurant:"5bfb38aa3c0000859430adea", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmZlZTMxMGNhY2Y1YmIwZjRlY2I3MWUiLCJpYXQiOjE1NDM0NDgyNTN9.UGt5EjnxXseLJ83wDic5FoExEPsABDGQW74hlhWRlFM") {
+    t{
+      id
+    }
   }
 }
+
+
+query{
+  nextTicketToken(id_restaurant:"5bfb38aa3c0000859430adea", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmZlZTMxMGNhY2Y1YmIwZjRlY2I3MWUiLCJpYXQiOjE1NDM0NDgyNTN9.UGt5EjnxXseLJ83wDic5FoExEPsABDGQW74hlhWRlFM") {
+    id
+  }
+}
+
+
+query{
+  ticketsByRestaurantToken(id_restaurant:"5bfb38aa3c0000859430adea", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmZlZTMxMGNhY2Y1YmIwZjRlY2I3MWUiLCJpYXQiOjE1NDM0NDgyNTN9.UGt5EjnxXseLJ83wDic5FoExEPsABDGQW74hlhWRlFM") {
+    id
+  }
+}
+
+
+query{
+  userByIdToken(cedula_user:"1032490297", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmZlZTMxMGNhY2Y1YmIwZjRlY2I3MWUiLCJpYXQiOjE1NDM0NDgyNTN9.UGt5EjnxXseLJ83wDic5FoExEPsABDGQW74hlhWRlFM") {
+    _id
+  }
+}
+
+
+mutation{
+  updateTicketToken(id_ticket:"36", ticket:{status:"CALLING"} ,token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmZlZTMxMGNhY2Y1YmIwZjRlY2I3MWUiLCJpYXQiOjE1NDM0NDgyNTN9.UGt5EjnxXseLJ83wDic5FoExEPsABDGQW74hlhWRlFM"){
+    status
+  }
+}
+
+
+mutation{
+  updateUserToken(id_user:"5bfecf26cacf5b5426ecb709",token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmZlZTMxMGNhY2Y1YmIwZjRlY2I3MWUiLCJpYXQiOjE1NDM0NDgyNTN9.UGt5EjnxXseLJ83wDic5FoExEPsABDGQW74hlhWRlFM",user:{
+    active_ticket: "asd"
+  })}

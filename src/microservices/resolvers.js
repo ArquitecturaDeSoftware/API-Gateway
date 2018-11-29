@@ -14,6 +14,8 @@ const URL_T = `http://${url_T}:${port_T}/${entryPoint_T}`;
 const URL_U = `http://${url_U}:${port_U}/${entryPoint_U}`;
 
 const resolvers = {
+
+
 	Query: {
 		// Statistics
 		allStatistics: (_) =>
@@ -53,8 +55,51 @@ const resolvers = {
 			generalRequest(`${URL_U}/${cedula_user}`, 'GET'),
 		verifyToken: (_, { token }) =>
 			generalRequestHead(`${URL_U}/${cedula_user}`, 'GET', token),
-		
+
+
+//----------------TOKENS---------------------------------
+
+
+		async nextTicketToken (_, { id_restaurant, token }) {
+			const available = await generalRequestHead(`${URL_U}/auth/verifyToken`, 'GET', token);
+			//const available = await generalRequestHead(`http://35.227.86.231:3000/users/auth/verifyToken`, 'GET', token);			
+			if(available == true) {
+				return generalRequest(`http://${url_T}:${port_T}/nextticket/${id_restaurant}`, 'GET')
+				//return generalRequest(`http://35.243.169.156:4200/nextticket/${id_restaurant}`, 'GET')
+			}
+		},
+
+		async statisticByRestaurantToken (_, { id_restaurant, token }) {
+			const available = await generalRequestHead(`${URL_U}/auth/verifyToken`, 'GET', token);
+			//const available = await generalRequestHead(`http://35.227.86.231:3000/users/auth/verifyToken`, 'GET', token);			
+			if(available == true) {
+				return generalRequest(`${URL_S}/${id_restaurant}`, 'GET')
+				//return generalRequest(`http://35.233.203.49:8800/statistics/${id_restaurant}`, 'GET')
+			}
+		},
+
+		async ticketsByRestaurantToken (_, { id_restaurant, token }) {
+			const available = await generalRequestHead(`${URL_U}/auth/verifyToken`, 'GET', token);
+			//const available = await generalRequestHead(`http://35.227.86.231:3000/users/auth/verifyToken`, 'GET', token);			
+			if(available == true) {
+				return generalRequest(`${URL_T}/lunchroom/${id_restaurant}`, 'GET')
+				//return generalRequest(`http://35.243.169.156:4200/tickets/lunchroom/${id_restaurant}`, 'GET')
+			}
+		},
+
+		async userByIdToken (_, { cedula_user, token }) {
+			const available = await generalRequestHead(`${URL_U}/auth/verifyToken`, 'GET', token);
+			//const available = await generalRequestHead(`http://35.227.86.231:3000/users/auth/verifyToken`, 'GET', token);			
+			if(available == true) {
+				return generalRequest(`${URL_U}/${cedula_user}`, 'GET')
+				//return generalRequest(`http://35.227.86.231:3000/users/${cedula_user}`, 'GET')
+			}
+		},
+
 	}, 
+
+
+
 	Mutation: {
 		// Statistics
 		createStatistic: (_, { statistic }) =>
@@ -92,6 +137,28 @@ const resolvers = {
 			generalRequest(`${URL_U}/${id_user}`, 'DELETE'),
 		login: (_, { login }) =>
 			generalRequest(`${URL_U}/auth`, 'POST', login),
+
+
+//----------------TOKENS---------------------------------
+
+
+		async updateTicketToken (_, {id_ticket, ticket, token }) {
+			const available = await generalRequestHead(`${URL_U}/auth/verifyToken`, 'GET', token);
+			//const available = await generalRequestHead(`http://35.227.86.231:3000/users/auth/verifyToken`, 'GET', token);			
+			if(available == true) {
+				return generalRequest(`${URL_T}/${id_ticket}`, 'PUT', ticket)
+				//return generalRequest(`http://35.243.169.156:4200/tickets/${id_ticket}`, 'PUT', ticket)
+			}
+		},
+
+		async updateUserToken (_, {id_user, user, token }) {
+			const available = await generalRequestHead(`${URL_U}/auth/verifyToken`, 'GET', token);
+			//const available = await generalRequestHead(`http://35.227.86.231:3000/users/auth/verifyToken`, 'GET', token);			
+			if(available == true) {
+				return generalRequest(`${URL_U}/${id_user}`, 'PUT', user)
+				//return generalRequest(`http://35.227.86.231:3000/users/${id_user}`, 'PUT', user)
+			}
+		},
 		
 	}
 };

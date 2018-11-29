@@ -181,6 +181,13 @@ export const microservicesQueries = `
 
     userById(cedula_user: String!): Users!
     verifyToken(token: String!): String!
+
+
+
+    nextTicketToken(id_restaurant: String!, token:String!): Tickets!
+    statisticByRestaurantToken(id_restaurant: String!, token:String!): Statistic_GET!
+    ticketsByRestaurantToken(id_restaurant: String!, token:String!): [Tickets]!
+    userByIdToken(cedula_user: String!, token: String!): Users!
 `;
 
 
@@ -205,4 +212,9 @@ export const microservicesMutations = `
     deleteUser(id_user: String!): String
     updateUser(id_user: String!, user: UserPUT): String
     login(login: Login!): String
+
+
+
+    updateTicketToken(id_ticket: String!, ticket: Ticket_PATCH!, token: String!): Tickets
+    updateUserToken(id_user: String!, user: UserPUT, token: String!): String
 `; 

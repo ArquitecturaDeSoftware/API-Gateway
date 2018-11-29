@@ -252,3 +252,137 @@ mutation{
     principalCount: 1
   })
 }
+
+
+----------------------------------------------------------------------------------
+
+mutation{
+  createUser(user:{
+    cedula:"geologia@unal.edu.co"
+    name:"geologia@unal.edu.co"
+    lunchroom_id:"5bfb38aa3c0000859430adea"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      active_ticket
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"comedorcentral@unal.edu.co"
+    name:"comedorcentral@unal.edu.co"
+    lunchroom_id:"5bfb38d33c0000859430adeb"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      active_ticket
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"biologia@unal.edu.co"
+    name:"biologia@unal.edu.co"
+    lunchroom_id:"5bfb38db3c0000859430adec"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      active_ticket
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"cafecampus@unal.edu.co"
+    name:"cafecampus@unal.edu.co"
+    lunchroom_id:"5bfb38e23c0000859430aded"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      active_ticket
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"cienciasagrarias@unal.edu.co"
+    name:"cienciasagrarias@unal.edu.co"
+    lunchroom_id:"5bfb38e93c0000859430adee"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      name
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"cienciaseconomicas@unal.edu.co"
+    name:"cienciaseconomicas@unal.edu.co"
+    lunchroom_id:"5bfb38f03c0000859430adef"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      name
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"cienciashumanas@unal.edu.co"
+    name:"cienciashumanas@unal.edu.co"
+    lunchroom_id:"5bfb38f73c0000859430adf0"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      name
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"hemeroteca@unal.edu.co"
+    name:"hemeroteca@unal.edu.co"
+    lunchroom_id:"5bfb39143c0000859430adf1"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      name
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"matematicas@unal.edu.co"
+    name:"matematicas@unal.edu.co"
+    lunchroom_id:"5bfb39223c0000859430adf2"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      name
+      lunchroom_id
+  }
+}
+
+mutation{
+  createUser(user:{
+    cedula:"odontologia@unal.edu.co"
+    name:"odontologia@unal.edu.co"
+    lunchroom_id:"5bfb392b3c0000859430adf3"
+    active_ticket:" "
+    password: "1234567"
+  }){
+      name
+      lunchroom_id
+  }
+}
+
