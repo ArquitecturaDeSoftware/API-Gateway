@@ -13,6 +13,7 @@ export async function generalRequest(url, method, body, fullResponse) {
 	const parameters = {
 		method,
 		uri: encodeURI(url),
+		family: 4,
 		body,
 		json: true,
 		resolveWithFullResponse: fullResponse
@@ -33,6 +34,7 @@ export async function generalRequestHead(url, method, token) {
 	const parameters = {
 		method,
 		uri: encodeURI(url),
+		family: 4,
 		headers: {'x-auth-token':token},
 		json: true,
 		
