@@ -11,7 +11,8 @@ const options = {
 	family: 4
 };
 dns.lookup(`${url_S}`, options, (err, address, family) =>
-console.log('address: %j family: IPv%s', address, family));
+	url_L = address,
+	console.log('address: %j family: IPv%s', address, family));
 
 
 const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
