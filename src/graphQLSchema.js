@@ -31,6 +31,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		microservicesResolvers
+		microservicesResolvers().then(result => {return result})
 	)
 });
