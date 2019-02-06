@@ -6,14 +6,17 @@ import { url_S, port_S, entryPoint_S,
 	 url_T, port_T, entryPoint_T,
 	 url_U, port_U, entryPoint_U } from './server'; 
 
-var uL = '';
+var uL ;
 
 const dns = require('dns');
 const options = {
 	family: 4
 };
-dns.lookup(`${url_S}`, options, (err, address, family) =>
-	uL = address);
+dns.lookup(`${url_S}`, options, function(err, address, family){
+	uL = address;
+});
+	
+
 console.log(uL);
 
 
