@@ -7,47 +7,43 @@ import { url_S, port_S, entryPoint_S,
 	 url_P, port_P, entryPoint_P,
 	 url_T, port_T, entryPoint_T,
 	 url_U, port_U, entryPoint_U } from './server'; 
-
-const options = {
-	family: 4
-};
-
-var UL = '';
-var UM = '';
-var UP = '';
-var UT = '';
-var UU = '';
-var US = '';
-
-var resolvers;
-
-console.log(url_L, dns_sync.resolve(`${url_L}`));
-
-
+	 
 export default async function res(){
+	const options = {
+		family: 4
+	};
 
-	var t = await dns.lookup(`${url_L}`, options, function(err, address, family){
+	let UL = '';
+	let UM = '';
+	let UP = '';
+	let UT = '';
+	let UU = '';
+	let US = '';
+	
+	let resolvers;
+
+	await dns.lookup(`${url_L}`, options, function(err, address, family){
 		console.log('address: %j family: IPv%s', address, family)
 		UL = address;
 	});
-	
-	var e = await dns.lookup(`${url_M}`, options, function(err, address2, family){
+
+	await dns.lookup(`${url_M}`, options, function(err, address2, family){
 		console.log('address2: %j family: IPv%s', address2, family)
 		UM = address2;
 	});	
-	var f = await dns.lookup(`${url_P}`, options, function(err, address3, family){
+	await dns.lookup(`${url_P}`, options, function(err, address3, family){
 		console.log('address3: %j family: IPv%s', address3, family)
 		UP = address3;
 	});
-	var k = await dns.lookup(`${url_T}`, options, function(err, address4, family){
+	await dns.lookup(`${url_T}`, options, function(err, address4, family){
 		console.log('address4: %j family: IPv%s', address4, family)
 		UT = address4;
 	});
-	var l = await dns.lookup(`${url_U}`, options, function(err, address5, family){
+	await dns.lookup(`${url_U}`, options, function(err, address5, family){
 		console.log('address5: %j family: IPv%s', address5, family)
 		UU = address5;
 	});
-	var u = await dns.lookup(`${url_S}`, options, function(err, address6, family){
+	await dns.lookup(`${url_S}`, options, function(err, address6, family){
 		console.log('address6: %j family: IPv%s', address6, family)
 		US = address6;
 	});
@@ -60,9 +56,7 @@ export default async function res(){
 	const URL_P = `http://${UP}:${port_P}/${entryPoint_P}`;
 	const URL_T = `http://${UT}:${port_T}/${entryPoint_T}`;
 	const URL_U = `http://${UU}:${port_U}/${entryPoint_U}`;
-	
-	console.log(UL);
-	
+		
 
 	resolvers = {
 		Query: {
@@ -210,6 +204,9 @@ export default async function res(){
 			},	
 		}
 	};
+
+	console.log("acabo");
+	
 	
 	return resolvers;
 }
