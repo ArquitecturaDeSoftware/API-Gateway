@@ -21,15 +21,14 @@ var US = '';
 
 var resolvers;
 
-console.log(dns_sync.resolve(`${url_L}`));
+console.log(url_L, dns_sync.resolve(`${url_L}`));
 
 
 export default async function res(){
 
-	var t = dns.lookup(`google.com`, options, function(err, address, family){
+	var t = await dns.lookup(`${url_L}`, options, function(err, address, family){
 		console.log('address: %j family: IPv%s', address, family)
 		UL = address;
-		return address;
 	});
 	
 	var e = await dns.lookup(`${url_M}`, options, function(err, address2, family){
@@ -37,15 +36,19 @@ export default async function res(){
 		UM = address2;
 	});	
 	var f = await dns.lookup(`${url_P}`, options, function(err, address3, family){
+		console.log('address3: %j family: IPv%s', address3, family)
 		UP = address3;
 	});
 	var k = await dns.lookup(`${url_T}`, options, function(err, address4, family){
+		console.log('address4: %j family: IPv%s', address4, family)
 		UT = address4;
 	});
 	var l = await dns.lookup(`${url_U}`, options, function(err, address5, family){
+		console.log('address5: %j family: IPv%s', address5, family)
 		UU = address5;
 	});
 	var u = await dns.lookup(`${url_S}`, options, function(err, address6, family){
+		console.log('address6: %j family: IPv%s', address6, family)
 		US = address6;
 	});
 	
