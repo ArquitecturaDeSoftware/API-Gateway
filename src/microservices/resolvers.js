@@ -15,25 +15,20 @@ var UL = '';
 var resolvers;
 
 async function getIP(){
-	dns.lookup(`${url_S}`, options, function(err, address, family){
+	dns.lookup(`${url_L}`, options, function(err, address, family){
 		UL = address;
 	});
-	console.log("1");	
 }
 
 
 getIP().then( result => {
-	console.log(UL);
 
 	const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
 	const URL_L = `http://${UL}:${port_L}/${entryPoint_L}`;
 	const URL_M = `http://${url_M}:${port_M}/${entryPoint_M}`;
 	const URL_P = `http://${url_P}:${port_P}/${entryPoint_P}`;
 	const URL_T = `http://${url_T}:${port_T}/${entryPoint_T}`;
-	const URL_U = `http://${url_U}:${port_U}/${entryPoint_U}`;
-
-	console.log(URL_L);
-	
+	const URL_U = `http://${url_U}:${port_U}/${entryPoint_U}`;	
 
 	resolvers = {
 
