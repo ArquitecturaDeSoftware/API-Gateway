@@ -33,4 +33,3 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		microservicesResolvers().then(result => {return result}))
 });
-	console.log(resultado);
