@@ -22,10 +22,13 @@ var resolvers;
 
 export default async function res(){
 
-	var t = await dns.lookup(`${url_L}`, options, function(err, address, family){
+	var t = dns.lookup(`${url_L}`, options, function(err, address, family){
 		console.log('address: %j family: IPv%s', address, family)
 		UL = address;
+		return address;
 	});
+	console.log(t);
+	
 	var e = await dns.lookup(`${url_M}`, options, function(err, address2, family){
 		console.log('address2: %j family: IPv%s', address2, family)
 		UM = address2;
@@ -198,12 +201,9 @@ export default async function res(){
 					return generalRequest(`${URL_U}/${id_user}`, 'PUT', user)
 					//return generalRequest(`http://35.227.86.231:3000/users/${id_user}`, 'PUT', user)
 				}
-			},
-			
+			},	
 		}
-
 	};
-	console.log(UL);
 	
 	return resolvers;
 }
