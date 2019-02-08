@@ -1,3 +1,4 @@
+
 import { generalRequest, getRequest, generalRequestHead } from '../utilities';
 import { url_S, port_S, entryPoint_S,
 	 url_L, port_L, entryPoint_L, 
@@ -6,8 +7,9 @@ import { url_S, port_S, entryPoint_S,
 	 url_T, port_T, entryPoint_T,
 	 url_U, port_U, entryPoint_U } from './server'; 
 
+
+const URL_L = `http://google.com:${port_L}/${entryPoint_L}`;
 const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
-const URL_L = `http://${url_L}:${port_L}/${entryPoint_L}`;
 const URL_M = `http://${url_M}:${port_M}/${entryPoint_M}`;
 const URL_P = `http://${url_P}:${port_P}/${entryPoint_P}`;
 const URL_T = `http://${url_T}:${port_T}/${entryPoint_T}`;

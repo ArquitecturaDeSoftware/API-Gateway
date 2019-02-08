@@ -1,4 +1,4 @@
-import request from 'request-promise-native';
+import request from 'request-promise';
 import { formatError } from 'graphql';
 
 /**
@@ -13,7 +13,6 @@ export async function generalRequest(url, method, body, fullResponse) {
 	const parameters = {
 		method,
 		uri: encodeURI(url),
-		family: 4,
 		body,
 		json: true,
 		resolveWithFullResponse: fullResponse
@@ -84,6 +83,8 @@ export function addParams(url, parameters) {
  */
 export function getRequest(url, path, parameters) {
 	const queryUrl = addParams(`${url}${path}`, parameters);
+	console.log(url);
+	
 	return generalRequest(queryUrl, 'GET');
 }
 
