@@ -1,4 +1,3 @@
-
 import { generalRequest, getRequest, generalRequestHead } from '../utilities';
 import { url_S, port_S, entryPoint_S,
 	 url_L, port_L, entryPoint_L, 
@@ -8,15 +7,16 @@ import { url_S, port_S, entryPoint_S,
 	 url_U, port_U, entryPoint_U } from './server'; 
 
 
-const URL_L = `${url_L}://${url_L}:${port_L}/${entryPoint_L}`;
+
+const URL_L = `http://${url_L}:${port_L}/${entryPoint_L}`;
 const URL_S = `http://${url_S}:${port_S}/${entryPoint_S}`;
 const URL_M = `http://${url_M}:${port_M}/${entryPoint_M}`;
 const URL_P = `http://${url_P}:${port_P}/${entryPoint_P}`;
 const URL_T = `http://${url_T}:${port_T}/${entryPoint_T}`;
 const URL_U = `http://${url_U}:${port_U}/${entryPoint_U}`;
 
-const resolvers = {
 
+const resolvers = {
 
 	Query: {
 		// Statistics
