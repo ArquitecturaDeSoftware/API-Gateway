@@ -1,6 +1,6 @@
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c2c32c0000782642e781"
+    id_lunchroom: "5c5e1af030000013bc10a88d"
     soup: "Arroz"
     appetizer: "Lenteja o Frijol"
     main_course: "Arroz, platano en salsa dulce"
@@ -13,7 +13,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c2dd2c0000782642e782"
+    id_lunchroom: "5c5e1b3030000013bc10a88e"
     soup: "Cuchuco"
     appetizer: "Habichuela o Frijol"
     main_course: "Arroz, platano en salsa dulce"
@@ -26,7 +26,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c2e62c0000782642e783"
+    id_lunchroom: "5c5e1b3730000013bc10a88f"
     soup: "Avena"
     appetizer: "Lenteja o Frijol"
     main_course: "Arroz, platano en salsa dulce"
@@ -39,7 +39,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c2ee2c0000782642e784"
+    id_lunchroom: "5c5e1b3e30000013bc10a890"
     soup: "Ajiaco"
     appetizer: "Garbanzo o Frijol"
     main_course: "Arroz, yuca y papa"
@@ -52,7 +52,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c2f52c0000782642e785"
+    id_lunchroom: "5c5e1b4f30000013bc10a891"
     soup: "Masamorra"
     appetizer: "Lenteja o Pasta"
     main_course: "Arroz y platano en salsa dulce"
@@ -65,7 +65,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c2fd2c0000782642e786"
+    id_lunchroom: "5c5e1b5830000013bc10a892"
     soup: "Sopa de verduras"
     appetizer: "Lenteja o Frijol"
     main_course: "Arroz, platano en salsa dulce"
@@ -78,7 +78,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c3052c0000782642e787"
+    id_lunchroom: "5c5e1b6030000013bc10a893"
     soup: "Crema de ahuyama"
     appetizer: "Frijol o Pasta"
     main_course: "Arroz, papa y yuca"
@@ -91,7 +91,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c30d2c0000782642e788"
+    id_lunchroom: "5c5e1b6830000013bc10a894"
     soup: "Arroz"
     appetizer: "Pasta o Frijol"
     main_course: "Arroz, platano en salsa dulce"
@@ -104,7 +104,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c3142c0000782642e789"
+    id_lunchroom: "5c5e1b7030000013bc10a895"
     soup: "Sopa de verduras"
     appetizer: "Lenteja o arveja"
     main_course: "Arroz y torta de ahuyama"
@@ -117,7 +117,7 @@ mutation{
 
 mutation{
   createMenu(menu:{
-    id_lunchroom: "5c53c31b2c0000782642e78a"
+    id_lunchroom: "5c5e1b7930000013bc10a896"
     soup: "Sopa de platano"
     appetizer: "Lenteja o Frijol"
     main_course: "Arroz, platano en salsa dulce"
@@ -260,7 +260,7 @@ mutation{
   createUser(user:{
     cedula:"geologia@unal.edu.co"
     name:"geologia@unal.edu.co"
-    lunchroom_id:"5c53c2c32c0000782642e781"
+    lunchroom_id:"5c5e1af030000013bc10a88d"
     active_ticket:" "
     password: "1234567"
   }){
@@ -273,7 +273,7 @@ mutation{
   createUser(user:{
     cedula:"comedorcentral@unal.edu.co"
     name:"comedorcentral@unal.edu.co"
-    lunchroom_id:"5c53c2dd2c0000782642e782"
+    lunchroom_id:"5c5e1b3030000013bc10a88e"
     active_ticket:" "
     password: "1234567"
   }){
@@ -286,7 +286,7 @@ mutation{
   createUser(user:{
     cedula:"biologia@unal.edu.co"
     name:"biologia@unal.edu.co"
-    lunchroom_id:"5c53c2e62c0000782642e783"
+    lunchroom_id:"5c5e1b3730000013bc10a88f"
     active_ticket:" "
     password: "1234567"
   }){
@@ -299,7 +299,7 @@ mutation{
   createUser(user:{
     cedula:"cafecampus@unal.edu.co"
     name:"cafecampus@unal.edu.co"
-    lunchroom_id:"5c53c2ee2c0000782642e784"
+    lunchroom_id:"5c5e1b3e30000013bc10a890"
     active_ticket:" "
     password: "1234567"
   }){
@@ -312,7 +312,7 @@ mutation{
   createUser(user:{
     cedula:"cienciasagrarias@unal.edu.co"
     name:"cienciasagrarias@unal.edu.co"
-    lunchroom_id:"5c53c2f52c0000782642e785"
+    lunchroom_id:"5c5e1b4f30000013bc10a891"
     active_ticket:" "
     password: "1234567"
   }){
@@ -325,7 +325,7 @@ mutation{
   createUser(user:{
     cedula:"cienciaseconomicas@unal.edu.co"
     name:"cienciaseconomicas@unal.edu.co"
-    lunchroom_id:"5c53c2fd2c0000782642e786"
+    lunchroom_id:"5c5e1b5830000013bc10a892"
     active_ticket:" "
     password: "1234567"
   }){
@@ -338,7 +338,7 @@ mutation{
   createUser(user:{
     cedula:"cienciashumanas@unal.edu.co"
     name:"cienciashumanas@unal.edu.co"
-    lunchroom_id:"5c53c3052c0000782642e787"
+    lunchroom_id:"5c5e1b6030000013bc10a893"
     active_ticket:" "
     password: "1234567"
   }){
@@ -351,7 +351,7 @@ mutation{
   createUser(user:{
     cedula:"hemeroteca@unal.edu.co"
     name:"hemeroteca@unal.edu.co"
-    lunchroom_id:"5c53c30d2c0000782642e788"
+    lunchroom_id:"5c5e1b6830000013bc10a894"
     active_ticket:" "
     password: "1234567"
   }){
@@ -364,7 +364,7 @@ mutation{
   createUser(user:{
     cedula:"matematicas@unal.edu.co"
     name:"matematicas@unal.edu.co"
-    lunchroom_id:"5c53c3142c0000782642e789"
+    lunchroom_id:"5c5e1b7030000013bc10a895"
     active_ticket:" "
     password: "1234567"
   }){
@@ -377,7 +377,7 @@ mutation{
   createUser(user:{
     cedula:"odontologia@unal.edu.co"
     name:"odontologia@unal.edu.co"
-    lunchroom_id:"5c53c31b2c0000782642e78a"
+    lunchroom_id:"5c5e1b7930000013bc10a896"
     active_ticket:" "
     password: "1234567"
   }){
